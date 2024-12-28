@@ -1,26 +1,27 @@
 [package]
 name = "tree-sitter-llvm"
-description = "LLVM grammar for the tree-sitter parsing library"
-version = "0.0.1"
-keywords = ["incremental", "parsing", "LLVM"]
+description = "Tree sitter parser for LLVM"
+version = "1.0.0"
+authors = ["Benjamin Graham"]
+license = "ISC"
+readme = "README.md"
+keywords = ["incremental", "parsing", "tree-sitter", "llvm"]
 categories = ["parsing", "text-editors"]
-repository = "https://github.com/tree-sitter/tree-sitter-LLVM"
-edition = "2018"
-license = "MIT"
+repository = "git+https://github.com/benwilliamgraham/tree-sitter-llvm.git"
+edition = "2021"
+autoexamples = false
 
 build = "bindings/rust/build.rs"
-include = [
-  "bindings/rust/*",
-  "grammar.js",
-  "queries/*",
-  "src/*",
-]
+include = ["bindings/rust/*", "grammar.js", "queries/*", "src/*"]
 
 [lib]
 path = "bindings/rust/lib.rs"
 
 [dependencies]
-tree-sitter = "~0.20.0"
+tree-sitter-language = "0.1"
 
 [build-dependencies]
-cc = "1.0"
+cc = "1.1.22"
+
+[dev-dependencies]
+tree-sitter = "0.24.3"

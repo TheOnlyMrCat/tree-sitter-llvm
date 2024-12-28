@@ -3,8 +3,8 @@ package tree_sitter_llvm_test
 import (
 	"testing"
 
-	tree_sitter "github.com/smacker/go-tree-sitter"
-	"github.com/tree-sitter/tree-sitter-llvm"
+	tree_sitter "github.com/tree-sitter/go-tree-sitter"
+	tree_sitter_llvm "git+github.com/benwilliamgraham/tree-sitter-llvm.git/bindings/go"
 )
 
 func TestCanLoadGrammar(t *testing.T) {
